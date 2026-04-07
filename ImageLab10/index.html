@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"> </script>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+      <a-assets>
+        <img id="sand-texture" src="mb946_00174.jpg">
+        <img id="sky" src="Beach.jpg">
+      </a-assets>
+
+      Background
+      <a-sky src="#sky"></a-sky>
+
+      Ocean
+      <a-plane position="0 0.01 -14" rotation="-90 0 0" width="20" height="16" color="#1a7abf"></a-plane>
+
+      Sand ground
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="10" src="#sand-texture"></a-plane>
+
+      Shoreline
+      <a-plane position="0 0.01 -9.5" rotation="-90 0 0" width="20" height="0.6" color="#a8d8ea" opacity="0.6"></a-plane>
+
+      Base mound
+      <a-cylinder position="0 0.2 -4" radius="1.2" height="0.4" src="#sand-texture"></a-cylinder>
+
+      Main tower
+      <a-cylinder position="0 1 -4" radius="0.5" height="1.2" src="#sand-texture"></a-cylinder>
+      <a-cone position="0 1.8 -4" radius-bottom="0.55" height="0.6" src="#sand-texture"></a-cone>
+
+      Side towers
+      <a-cylinder position="-0.9 0.8 -4" radius="0.25" height="0.8" src="#sand-texture"></a-cylinder>
+      <a-cone position="-0.9 1.3 -4" radius-bottom="0.3" height="0.4" src="#sand-texture"></a-cone>
+
+      <a-cylinder position="0.9 0.8 -4" radius="0.25" height="0.8" src="#sand-texture"></a-cylinder>
+      <a-cone position="0.9 1.3 -4" radius-bottom="0.3" height="0.4" src="#sand-texture"></a-cone>
+
+      Front wall
+      <a-box position="0 0.5 -3.2" depth="0.4" height="0.6" width="1.8" src="#sand-texture"></a-box>
+
+    
+
     </a-scene>
   </body>
 </html>
