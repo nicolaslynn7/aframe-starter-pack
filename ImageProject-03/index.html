@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Icons of Greens: Golf Museum</title>
+    <title>The Icons of Greens: VR Golf Museum</title>
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
   </head>
   <body>
@@ -10,27 +10,44 @@
       
       <a-assets>
         <img id="sky-texture" src="31637656148_fc66ce03cd_5k.jpg">
-        <a-asset-item id="azalea-model" src="assets/rhododendron_-_azalea__free_download/"></a-asset-item>
+        <a-asset-item id="andrews-model" src="assets/swilcan_bridge_st_andrews_links_golf_course.glb"></a-asset-item>
+        <a-asset-item id="azalea-model" src="assets/rhododendron_-_azalea__free_download.glb"></a-asset-item>
       </a-assets>
 
       <a-sky src="#sky-texture"></a-sky>
 
-      <a-plane position="0 0.01 0" rotation="-90 0 0" width="100" height="100" color="#2d5a27"></a-plane>
+      <a-circle position="0 0.01 0" radius="15" rotation="-90 0 0" color="#1a3d1a"></a-circle>
+      <a-circle position="0 0.02 0" radius="12" rotation="-90 0 0" color="#2d5a27"></a-circle>
 
-      <a-entity position="-4 0 -6">
-        <a-entity gltf="#azalea-model" position="0 1 0" scale="1 1 1"></a-entity>
-        
-        
-        
-        <a-text value="AMEN CORNER\nAugusta Azalea" position="0 1.2 0.7" align="center" width="3" color="#FFF"></a-text>
+      <a-entity position="-5 0 -5" rotation="0 45 0">
+        <a-entity gltf-model="#azalea-model" position="0 1.1 0" scale="10 10 10"></a-entity>
+        <a-box position="0 0.5 0" width="1.5" height="1" depth="1.5" color="#333"></a-box>
+        <a-text value="AMEN CORNER\nAugusta National" position="0 1.25 0.8" align="center" width="4" color="#FFF"></a-text>
       </a-entity>
 
+      <a-entity position="0 0 -8">
+        <a-entity position="0 1.1 0">
+          <a-cylinder position="0 0.4 0" radius="0.1" height="0.8" color="#5C4033" rotation="0 0 10"></a-cylinder>
+          <a-sphere position="0.2 0.8 0" radius="0.5" scale="1.5 0.3 1.2" color="#2d5a27"></a-sphere>
+          <a-sphere position="0.3 1.0 0" radius="0.3" scale="1.2 0.2 1" color="#3b7d32"></a-sphere>
+        </a-entity>
+        <a-box position="0 0.5 0" width="1.5" height="1" depth="1.5" color="#333"></a-box>
+        <a-text value="THE LONE CYPRESS\nPebble Beach" position="0 1.25 0.8" align="center" width="4" color="#FFF"></a-text>
+      </a-entity>
+
+      <a-entity position="5 0 -5" rotation="0 -45 0">
+        <a-entity gltf-model="#andrews-model" position="0 1.1 0" scale="0.15 0.15 0.15"></a-entity>
+        <a-box position="0 0.5 0" width="2.5" height="1" depth="1.5" color="#333"></a-box>
+        <a-text value="SWILCAN BRIDGE\nSt Andrews" position="0 1.25 0.8" align="center" width="4" color="#FFF"></a-text>
+      </a-entity>
+
+      <a-text value="ICONS OF GREENS" position="0 4 -5" align="center" width="10" color="#ffd700"></a-text>
+
+      <a-light type="ambient" intensity="0.7"></a-light>
+      <a-light type="directional" position="-2 4 2" intensity="0.5"></a-light>
       <a-entity camera look-controls wasd-controls position="0 1.6 0">
-        <a-cursor color="#FF0000"></a-cursor>
+        <a-cursor color="#FF0000" scale="0.5 0.5 0.5"></a-cursor>
       </a-entity>
-
-      <a-light type="ambient" intensity="0.8"></a-light>
-      <a-light type="directional" position="-1 4 2" intensity="0.6"></a-light>
 
     </a-scene>
   </body>
